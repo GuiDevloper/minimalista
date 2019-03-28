@@ -1,13 +1,25 @@
 {
   "name": "minimalista",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A old-school based library acting minimalist",
-  "license": "MIT",
-  "repository": "guidevloper/minimalista",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuiDevloper/minimalista.git"
+  },
   "keywords": [
     "minimal",
-    "npm",
-    "package"
-  ]
+    "old-school",
+    "module",
+    "library"
+  ],
+  "author": {
+    "name": "GuiDevloper",
+    "url": "https://guidevloper.me/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuiDevloper/minimalista/issues"
+  },
+  "homepage": "https://github.com/GuiDevloper/minimalista"
 }
