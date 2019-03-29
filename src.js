@@ -20,7 +20,7 @@
 
   // Set ou update css de elementos
   export function setStyle(els, value) {
-    for (var el of [...els]) {
+    for (var el of Array.from(els)) {
       el.style.cssText += ";" + value;
     }
   }
@@ -28,7 +28,7 @@
   // Get length de svg
   export function getLength(els) {
     var len = 0;
-    for (var el of [...els].values()) {
+    for (var el of Array.from(els).values()) {
       len += el.tagName == "path" ? el.getTotalLength() :
         (2 * Math.PI) * el.getAttribute('r');
     }

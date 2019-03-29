@@ -1,6 +1,6 @@
 {
   "name": "minimalista",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A old-school based library acting minimalist",
   "main": "index.js",
   "repository": {
