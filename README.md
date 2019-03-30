@@ -1,16 +1,23 @@
-# Minimalista
+<h1 align="center">Minimalista</h1>
+
+<p align="center">
+  <img alt="npm version" src="https://img.shields.io/npm/v/minimalista.svg?color=red">
+  <img alt="npm downloads" src="https://img.shields.io/npm/dm/minimalista.svg?label=npm%20downloads">
+  <img alt="license" src="https://img.shields.io/npm/l/minimalista.svg">
+  <img alt="module size" src="https://img.shields.io/badge/module%20minified%20size-734%20B-007ec6.svg">
+</p>
 
 A old-school based library acting minimalist
 
 ### Uso 1: Com empacotador estilo Webpack
 
-Em seu terminal com [Node](https://nodejs.org/pt-br/) rode o comando [```npm```](https://www.npmjs.com/get-npm):
+Em seu terminal com [Node](https://nodejs.org/pt-br/) rode o comando [`npm`](https://www.npmjs.com/get-npm):
 
 ```
 npm i minimalista --save-dev
 ```
 
-ou [```yarn```](https://yarnpkg.com/pt-BR/):
+ou [`yarn`](https://yarnpkg.com/pt-BR/):
 
 ```
 yarn add minimalista --dev
@@ -35,7 +42,8 @@ Porém, ao usar este deve se atentar a [atual compatibilidade da _feature_ nos b
 // usando empacotador
 var url_pro_modulo_uso1 = "minimalista";
 // usando type="module"
-var url_pro_modulo_uso2 = "https://cdn.jsdelivr.net/npm/minimalista@1.0.0/index.min.js";
+var url_pro_modulo_uso2 =
+  "https://cdn.jsdelivr.net/npm/minimalista@1.0.0/index.min.js";
 import {
   getByTag,
   getByClass,
@@ -43,25 +51,27 @@ import {
   setStyle,
   Ajax,
   widthBody
-} from "url-pro-modulo-aqui"; // necessita string pura, var não aceitável
+} from "url-pro-modulo-aqui";
+// necessita string pura, variável não aceitável
 
 ```
 
 ### Exemplo de Uso Real
 
 ```javascript
-
 // seu_codigo.js
 
 // uso do Ajax
-var ajaxProfile = Ajax.send("./user/data.json", "POST"); // .send(url, "GET" || "POST")
+var ajaxProfile = Ajax.send("./user/data.json", "POST");
 ajaxProfile.onreadystatechange = function() {
   if (Ajax.isReady(this)) {
     var userData = Object.values(JSON.parse(ajaxProfile.responseText));
+    // getById() + getByClass()
     // o elemento #user-data de dentro do .profile
-    var userProfile = getById("user-data", getByClass("profile")[0]); // getById() + getByClass()
+    var userProfile = getById("user-data", getByClass("profile")[0]);
+    // uso do getByTag()
     // todos os elementos <p> do userProfile
-    var paragraphs = getByTag("p", userProfile); // uso do getByTag()
+    var paragraphs = getByTag("p", userProfile);
     // percorrendo os <p>
     for (var [p, i] of paragraphs) {
       // colocando dados em cada
@@ -73,15 +83,22 @@ ajaxProfile.onreadystatechange = function() {
 };
 
 // Ao alterar o tamanho da janela
-window.addEventListener('resize', function() {
+window.addEventListener("resize", function() {
   // armazena a largura em pixels
   var screenWidth = widthBody(); // uso do widthBody()
   // 33% ou 50% da tela
-  var gridNewWidth = screenWidth > 769 ? screenWidth / 3 : screenWidth / 2;
+  var qtdParts = screenWidth > 769 ? 3 : 2;
   // todos os .grid-item ganham novo tamanho
-  setStyle(getByClass("grid-item"), `width: ${gridNewWidth};`);
+  setStyle(getByClass("grid-item"), `width: ${screenWidth / qtdParts};`);
   // útil quando há conteúdo adicionado dinamicamente
   // e seus tamanhos envolvem reposicionamento
 });
-
 ```
+## Lista de funções
+
+Todas as funções disponíveis, assim como seus parâmetros e retornos, [estão explicadas aqui](https://github.com/GuiDevloper/minimalista/blob/master/functions_list.md).
+
+## Licença
+[MIT](https://github.com/GuiDevloper/minimalista/blob/master/LICENSE)
+
+Copyright (c) 2019, Guilherme Correia
