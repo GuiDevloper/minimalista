@@ -9,6 +9,8 @@
 
 A old-school based library acting minimalist
 
+**To read the english version of this document [click here](https://github.com/GuiDevloper/minimalista/blob/master/README_en.md).**
+
 ### Uso 1: Com empacotador estilo Webpack
 
 Em seu terminal com [Node](https://nodejs.org/pt-br/) rode o comando [`npm`](https://www.npmjs.com/get-npm):
@@ -65,7 +67,9 @@ import {
 var ajaxProfile = Ajax.send("./user/data.json", "POST");
 ajaxProfile.onreadystatechange = function() {
   if (Ajax.isReady(this)) {
-    var userData = Object.values(JSON.parse(ajaxProfile.responseText));
+    var userData = Object.values(
+      JSON.parse(ajaxProfile.responseText)
+    );
     // getById() + getByClass()
     // o elemento #user-data de dentro do .profile
     var userProfile = getById("user-data", getByClass("profile")[0]);
@@ -89,7 +93,10 @@ window.addEventListener("resize", function() {
   // 33% ou 50% da tela
   var qtdParts = screenWidth > 769 ? 3 : 2;
   // todos os .grid-item ganham novo tamanho
-  setStyle(getByClass("grid-item"), `width: ${screenWidth / qtdParts};`);
+  setStyle(
+    getByClass("grid-item"),
+    `width: ${screenWidth / qtdParts};`
+  );
   // útil quando há conteúdo adicionado dinamicamente
   // e seus tamanhos envolvem reposicionamento
 });
