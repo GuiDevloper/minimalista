@@ -32,3 +32,25 @@ root: NodeElement = onde procurar o elemento
   * return boolean = realizado com sucesso ou não
 * **widthBody()**
   * return number = largura da tela em pixels
+* **object minCon**
+  * props:
+  * aa: 4.5, aaLarge: 3,  aaa: 7, aaaLarge: 4.5
+  * minContrast valores baseado no WCAG20
+* **genColor(bg, rgb)**
+  * params:
+  * bg: fundo escolhido pelo usuário em rgb
+  * rgb: cor antiga para buscar nova
+  * return string = nova cor hex contrastada
+* **getRgb(hex)**
+  * params:
+  * hex: cor em hex
+  * return Array = cor dividida em R G B
+* **luminos(rgb)**
+  * params:
+  * rgb: cor em rgb
+  * return number = luminosidade da cor
+* **contrast(bg, color2)**
+  * params:
+  * bg: cor de fundo
+  * color2: segunda cor a testar perante o bg
+  * return number = contraste entre cores

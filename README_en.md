@@ -1,10 +1,12 @@
 <h1 align="center">Minimalista</h1>
 
 <p align="center">
-  <img alt="npm version" src="https://img.shields.io/npm/v/minimalista.svg?color=red">
+  <img alt="npm version" src="https://img.shields.io/npm/v/minimalista.svg">
   <img alt="npm downloads" src="https://img.shields.io/npm/dm/minimalista.svg?label=npm%20downloads">
   <img alt="license" src="https://img.shields.io/npm/l/minimalista.svg">
-  <img alt="module size" src="https://img.shields.io/badge/module%20minified%20size-734%20B-007ec6.svg">
+  <img alt="GitHub file size in bytes" src="https://img.shields.io/github/size/guidevloper/minimalista/index.js.svg?label=github%20module%20size"><br>
+  <img width="540px" alt="Minimalista in extension to chrome" src="https://i.pinimg.com/originals/f6/05/74/f60574b4fb1393db4f6843303759af73.gif">
+  <br><em align="center">Use of contrasted colors generation in Chrome extension</em>
 </p>
 
 A old-school based library acting minimalist
@@ -100,6 +102,43 @@ window.addEventListener("resize", function() {
   // and their size involves repositioning
 });
 ```
+### Real Example using Vue
+
+In this example the module is used in a [extension to Chrome and Firefox](https://github.com/guidevloper/what-have-you-made-today), that changes the main page, generating a new text color contrasted with the background choiced by user.
+
+```javascript
+import { contrast, getRgb, genColor, minCon } from 'minimalista';
+
+export default {
+  ...
+  data: function() {
+    return {
+      min: { contrast, getRgb, genColor, minCon }
+    };
+  },
+  methods: {
+    getContrasted: function(bg, color = '191c4c') {
+      const mini = this.min;
+      // stores contrast of 2 RGB
+      const contrast = mini.contrast(
+        mini.getRgb(bg),
+        mini.getRgb(color));
+      // If contrast is enough according to WCAG20
+      if (contrast > mini.minCon.aa) {
+        return color;
+      } else {
+        // generates new color based on current
+        const newColor = mini.genColor(
+          mini.getRgb(bg),
+          mini.getRgb(color));
+        // re-test from start
+        return this.getContrasted(bg, newColor);
+      }
+    }
+  }
+};
+```
+
 ## Functions List
 
 All the available functions, as their parameters and returns, [are explained here](https://github.com/GuiDevloper/minimalista/blob/master/functions_list_en.md).
