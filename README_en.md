@@ -47,7 +47,7 @@ But, using this needs attention to [current compatibility of feature in browsers
 var url_to_module_use1 = "minimalista";
 // using type="module"
 var url_to_module_use2 =
-  "https://cdn.jsdelivr.net/npm/minimalista@1.0.0/index.min.js";
+  "https://cdn.jsdelivr.net/npm/minimalista@1.1.0/index.min.js";
 import {
   getByTag,
   getByClass,
@@ -59,6 +59,8 @@ import {
 // needs pure string, var not allowed
 
 ```
+Note: Version 1.0.0 is smaller because it does not contain the color manipulation, launched in v1.1.0
+
 ### Real World Example
 
 ```javascript

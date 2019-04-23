@@ -47,7 +47,7 @@ Porém, ao usar este deve se atentar a [atual compatibilidade da _feature_ nos b
 var url_pro_modulo_uso1 = "minimalista";
 // usando type="module"
 var url_pro_modulo_uso2 =
-  "https://cdn.jsdelivr.net/npm/minimalista@1.0.0/index.min.js";
+  "https://cdn.jsdelivr.net/npm/minimalista@1.1.0/index.min.js";
 import {
   getByTag,
   getByClass,
@@ -59,6 +59,7 @@ import {
 // necessita string pura, variável não aceitável
 
 ```
+Obs: A versão 1.0.0 é menor pois não contém a manipulação de cores, lançada na v1.1.0
 
 ### Exemplo de Uso Real
 
